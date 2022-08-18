@@ -1,7 +1,8 @@
 import json
 import datetime
 import requests
-from PIL import Image, ImageDraw, ImageFont
+from PIL import ImageDraw, ImageFont
+from PIL import Image
 
 
 def get_weather_details(lat, longi):
