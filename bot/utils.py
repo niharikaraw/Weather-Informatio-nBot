@@ -46,10 +46,10 @@ def reply_weather_info(data, uuid, city=None):
 
     img = Image.open(filename)   
     I1 = ImageDraw.Draw(img)                
-    myFont = ImageFont.truetype("C:/Users/91955/OneDrive/Desktop/Weather Bot/weatherbot/.fonts/corbel.ttf", 20)
+    myFont = ImageFont.truetype("corbel.ttf", 20)
 
     I1.text(xy=(10, 220), text="{}".format(weather_cond), font=myFont, fill =(255, 0, 0))
-    I1.text(xy=(10, 180), text="{}".format(place), font=ImageFont.truetype("C:/Users/91955/OneDrive/Desktop/Weather Bot/weatherbot/.fonts/himalaya.ttf", 40), fill ='navy')
+    I1.text(xy=(10, 180), text="{}".format(place), font=ImageFont.truetype("himalaya.ttf", 40), fill ='navy')
     I1.text(xy=(250, 20), text="Temperature: {}°C".format(temp), font=myFont, fill =(255, 0, 0))
     I1.text(xy=(250, 50), text="Feels Like: {}°C".format(feels_like), font=myFont, fill =(255, 0, 0))
     I1.text(xy=(250, 80), text="Humidity: {} %".format(humidity), font=myFont, fill =(255, 0, 0))
