@@ -10,4 +10,4 @@ gunicorn
 Werkzeug
 emoji
 psycopg2
-pillow
+Pillow==9.2.0
