@@ -62,5 +62,5 @@ def reply_weather_info(data, uuid, city=None):
     reply_text = img
     
     return reply_text
-
+#
 
