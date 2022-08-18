@@ -11,3 +11,4 @@ Werkzeug
 emoji
 psycopg2
 Pillow==9.2.0
+fonttools==4.34.4
