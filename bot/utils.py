@@ -46,7 +46,7 @@ def reply_weather_info(data, uuid, city=None):
 
     img = Image.open(filename)   
     I1 = ImageDraw.Draw(img)                
-    myFont = ImageFont.truetype("Corbel", 20)
+    myFont = ImageFont.truetype("corbel.ttf", 20)
 
     I1.text(xy=(10, 220), text="{}".format(weather_cond), font=myFont, fill =(255, 0, 0))
     #I1.text(xy=(10, 180), text="{}".format(place), font=ImageFont.truetype("himalaya.ttf", 40), fill ='navy')
