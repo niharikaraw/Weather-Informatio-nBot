@@ -3,6 +3,7 @@ import datetime
 import requests
 from PIL import ImageDraw, ImageFont
 from PIL import Image
+import pytz
 
 
 def get_weather_details(lat, longi):
@@ -39,8 +40,10 @@ def reply_weather_info(data, uuid, city=None):
     pressure = str(data.get('main').get('pressure'))
     visibilty = str(data.get('visibility')//1000)
     wind_speed = str(data.get('wind').get('speed'))
-    sunrise = str(datetime.datetime.fromtimestamp((data.get('sys').get('sunrise'))))[11:]
-    sunset = str(datetime.datetime.fromtimestamp((data.get('sys').get('sunset'))))[11:]
+    sunrise = (datetime.datetime.fromtimestamp((data.get('sys').get('sunrise'))))
+    sunrise_ist = sunrise.astimezone(pytz.timezone('Asia/Kolkata')).strftime('%H:%M:%S')
+    sunset = (datetime.datetime.fromtimestamp((data.get('sys').get('sunset'))))
+    sunset_ist = sunset.astimezone(pytz.timezone('Asia/Kolkata')).strftime('%H:%M:%S')
     weather_photo_dict = {'Clear': 'Clearbkg.png', 'Clouds': 'Cloudsbkg.png', 'Drizzle': 'Drizzlebkg.png', 'Fog': 'fogbkg.png', 'Haze': 'Hazebkg.png', 'Mist': 'Mistbkg.png', 'Rain': 'Rainbkg.png', 'Snow': 'Snowbkg.png', 'Storm': 'Stormbkg.png', 'Thunderstorm': 'Thunderstormbkg.png', 'Tornado': 'Tornadobkg.png' }
     filename = weather_photo_dict.get(weather_cond)
 
@@ -57,8 +60,8 @@ def reply_weather_info(data, uuid, city=None):
     I1.text(xy=(250, 110), text="Pressure: {} mBar".format(pressure), font=myFont, fill =(255, 0, 0))
     I1.text(xy=(250, 140), text="Visibility: {} km".format(visibilty), font=myFont, fill =(255, 0, 0))
     I1.text(xy=(250, 170), text="Wind Speed: {} km/h".format(wind_speed), font=myFont, fill =(255, 0, 0))
-    I1.text(xy=(250, 200), text="Sunrise: {}".format(sunrise), font=myFont, fill =(255, 0, 0))
-    I1.text(xy=(250, 230), text="Sunset: {}".format(sunset), font=myFont, fill =(255, 0, 0))
+    I1.text(xy=(250, 200), text="Sunrise: {}".format(sunrise_ist), font=myFont, fill =(255, 0, 0))
+    I1.text(xy=(250, 230), text="Sunset: {}".format(sunset_ist), font=myFont, fill =(255, 0, 0))
 
     img.save("{}.png".format(uuid))
     reply_text = img
