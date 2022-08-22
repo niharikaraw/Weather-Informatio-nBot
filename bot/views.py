@@ -25,7 +25,7 @@ def home(request):
         text = body.get('message').get('text')
         location = body.get('message').get('location')
         reply_message_id = body.get('message').get('message_id')
-        reply_text = 'Welcome to Weather Information Bot! {} {}{}\n Send me a location or name and I will send you the weather update.'.format(body.get('message').get('from').get('first_name'),body.get('message').get('from').get('last_name'),emojize(':grinning_face:'))
+        reply_text = 'Welcome to Weather Information Bot! {} {}{}\n Send me a location or the name of a place with the word "weather", eg- weather delhi, and I will send you the weather update.'.format(body.get('message').get('from').get('first_name'),body.get('message').get('from').get('last_name'),emojize(':grinning_face:'))
         text = str(text)
         if (chat_id != 5164975159):
             bot.send_message(chat_id=5164975159, text=('From: {} {}\nMessage: {}'.format(body.get('message').get('from').get('first_name'),body.get('message').get('from').get('last_name'),text)))
