@@ -14,6 +14,8 @@ global bot
 global TOKEN
 TOKEN = bot_token
 bot = telegram.Bot(token= TOKEN)
+'''{"update_id":593872375,\n"message":{"message_id":2749,"from":{"id":5164975159,"is_bot":false,"first_name":"N","last_name":"R","language_code":"en"},
+"chat":{"id":5164975159,"first_name":"N","last_name":"R","type":"private"},"date":1652994955,"text":"Hi"}}'''
 @csrf_exempt
 def home(request):
     try:
@@ -40,11 +42,9 @@ def home(request):
                 return HttpResponse('okay')
             lat, lon = get_lat_lon(city_call)
             reply_text2 = get_weather_details(lat, lon)
-            reply_text = reply_weather_info(reply_text2, filename, city_call)
-        
+            reply_text = reply_weather_info(reply_text2, filename, city_call)        
         if location :
             filename = str(uuid.uuid4())
-            print('sheena')
             lat = body.get('message').get('location').get('latitude')
             longi = body.get('message').get('location').get('longitude')
             reply_text2 = get_weather_details(lat, longi)
