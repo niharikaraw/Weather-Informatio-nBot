@@ -55,7 +55,7 @@ def reply_weather_info(data, uuid, city=None):
     sunrise_ist = sunrise.astimezone(pytz.timezone('Asia/Kolkata')).strftime('%H:%M:%S')
     sunset = (datetime.datetime.fromtimestamp((data.get('sys').get('sunset'))))
     sunset_ist = sunset.astimezone(pytz.timezone('Asia/Kolkata')).strftime('%H:%M:%S')
-    weather_photo_dict = {'Clear': 'Clearbkg.png', 'Clouds': 'Cloudsbkg.png', 'Drizzle': 'Drizzlebkg.png', 'Fog': 'fogbkg.png', 'Haze': 'Hazebkg.png', 'Mist': 'Mistbkg.png', 'Rain': 'Rainbkg.png', 'Snow': 'Snowbkg.png', 'Storm': 'Stormbkg.png', 'Thunderstorm': 'Thunderstormbkg.png', 'Tornado': 'Tornadobkg.png', 'Smoke': 'smokebkg.png' }
+    weather_photo_dict = {'Clear': 'Clearbkg.png', 'Clouds': 'Cloudsbkg.png', 'Drizzle': 'Drizzlebkg.png', 'Fog': 'Fogbkg.png', 'Haze': 'Hazebkg.png', 'Mist': 'Mistbkg.png', 'Rain': 'Rainbkg.png', 'Snow': 'Snowbkg.png', 'Storm': 'Stormbkg.png', 'Thunderstorm': 'Thunderstormbkg.png', 'Tornado': 'Tornadobkg.png', 'Smoke': 'smokebkg.png' }
     filename = weather_photo_dict.get(weather_cond)
 
     img = Image.open(filename)   
