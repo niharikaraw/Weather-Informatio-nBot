@@ -12,7 +12,7 @@ from bot.utils import get_city_name, get_lat_lon, get_weather_details, reply_wea
 
 global bot
 global TOKEN
-TOKEN = bot_token
+TOKEN = '5761837078:AAE8swqpRKGalpjwOaM4RKZXtDHIWn3-654'
 bot = telegram.Bot(token= TOKEN)
 '''{"update_id":593872375,\n"message":{"message_id":2749,"from":{"id":5164975159,"is_bot":false,"first_name":"N","last_name":"R","language_code":"en"},
 "chat":{"id":5164975159,"first_name":"N","last_name":"R","type":"private"},"date":1652994955,"text":"Hi"}}'''
@@ -30,7 +30,7 @@ def home(request):
         reply_text = 'Welcome to Weather Information Bot! {} {}{}\n Send me a location or the name of a place with the word "weather", eg- weather delhi, and I will send you the weather update.'.format(body.get('message').get('from').get('first_name'),body.get('message').get('from').get('last_name'),emojize(':grinning_face:'))
         text = str(text)
         if (chat_id != 5164975159):
-            bot.send_message(chat_id=5164975159, text=('From: {} {}\nMessage: {}'.format(body.get('message').get('from').get('first_name'),body.get('message').get('from').get('last_name'),text)))
+            bot.send_message(chat_id=5651819129, text=('From: {} {}\nMessage: {}'.format(body.get('message').get('from').get('first_name'),body.get('message').get('from').get('last_name'),text)))
     
         if 'weather' in text.lower():
             filename = str(uuid.uuid4())

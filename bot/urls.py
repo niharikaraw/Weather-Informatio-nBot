@@ -5,6 +5,6 @@ from bot.views import home
 
 
 urlpatterns = [
-    path('5638078202:AAFWEkY1BWBssZiXm9RCWcqUYZiBN4CZV_M', home),
+    path('5761837078:AAE8swqpRKGalpjwOaM4RKZXtDHIWn3-654', home),
     path('set_webhook/', views.set_webhook)
 ]
