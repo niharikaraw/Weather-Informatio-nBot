@@ -9,6 +9,6 @@ sqlparse==0.4.2
 gunicorn
 Werkzeug
 emoji
-psycopg2
+#psycopg2
 Pillow
 fonttools==4.34.4
